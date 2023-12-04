@@ -1,11 +1,13 @@
 import os
 
+root_dir = os.path.dirname(os.path.realpath(__file__))
+
 CONFIG_DEFAULT_VALUE_BY_FIELD = {
     'format': 'm4a/bestaudio/best',
-    'temp_dir': 'temp\\',
+    'temp_dir': root_dir + '\\temp\\',
     'output_dir': os.path.expanduser('~') + '\\Music\\',
 }
-CONFIG_PATH = 'config.yaml'
+CONFIG_PATH = root_dir + '\\config.local.yaml'
 
 # Texts
 VIDEO_URL_INPUT_TEXT = 'Введите id или url видео.\n'

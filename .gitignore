@@ -1,1 +1,5 @@
 .idea
+__pycache__
+.venv*/
+youtube_audio_downloader/temp
+youtube_audio_downloader/config.local.yaml

@@ -8,9 +8,12 @@ import youtube_audio_downloader.constants as constants
 
 
 def remove_dir_files_except_part(dir):
-    for item in os.listdir(dir):
-        if not item.endswith('.part'):
-            os.remove(os.path.join(dir, item))
+    try:
+        for item in os.listdir(dir):
+            if not item.endswith('.part'):
+                os.remove(os.path.join(dir, item))
+    except FileNotFoundError:
+        pass
 
 def get_ydl_opts(option, format, temp_dir, output_dir):
     ffmpeg_location = run.get_or_fetch_platform_executables_else_raise()[0]
